@@ -14,13 +14,13 @@ const sunsetEl = document.querySelector(".sunset");
 
 export async function displayWeather(data) {
   cityEl.textContent = data.address;
-  conditionsEl.textContent = `Conditions : ${data.conditions}`;
-  tempEl.textContent = `Température : ${data.temp}°C`;
-  precipEl.textContent = `Précipitations : ${data.precip} mm`;
-  windEl.textContent = `Vent : ${data.windspeed} km/h`;
+  conditionsEl.textContent = data.conditions;
+  tempEl.textContent = data.temp + "°C";
+  precipEl.textContent = `Precipitations : ${data.precip} mm`;
+  windEl.textContent = `Wind : ${data.windspeed} km/h`;
   uvEl.textContent = `UV Index : ${data.uvindex}`;
-  sunriseEl.textContent = `Lever du soleil : ${data.sunrise}`;
-  sunsetEl.textContent = `Coucher du soleil : ${data.sunset}`;
+  sunriseEl.textContent = `Sunrise : ${data.sunrise}`;
+  sunsetEl.textContent = `Sunset : ${data.sunset}`;
 }
 
 // Search Bar icon
