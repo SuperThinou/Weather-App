@@ -105,6 +105,10 @@ body {
     align-items: center;
 }
 
+h1 {
+    padding: 10px;
+}
+
 /* Utilitary classes */
 .hidden {
   display: none !important;
