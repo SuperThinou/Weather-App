@@ -17,7 +17,7 @@ export async function displayWeather(data) {
   conditionsEl.textContent = `Conditions : ${data.conditions}`;
   tempEl.textContent = `Température : ${data.temp}°C`;
   precipEl.textContent = `Précipitations : ${data.precip} mm`;
-  windEl.textContent = `Vent : ${data.wind} km/h`;
+  windEl.textContent = `Vent : ${data.windspeed} km/h`;
   uvEl.textContent = `UV Index : ${data.uvindex}`;
   sunriseEl.textContent = `Lever du soleil : ${data.sunrise}`;
   sunsetEl.textContent = `Coucher du soleil : ${data.sunset}`;

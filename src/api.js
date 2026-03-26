@@ -7,7 +7,7 @@ export async function getWeather(city) {
   const data = await response.json();
 
   const address = data.address;
-  const { conditions, icon, precip, sunrise, sunset, temp, uvindex, wind } =
+  const { conditions, icon, precip, sunrise, sunset, temp, uvindex, windspeed } =
     data.currentConditions;
   console.log(data);
 
@@ -24,6 +24,6 @@ export async function getWeather(city) {
     sunset,
     temp,
     uvindex,
-    wind,
+    windspeed,
   };
 }
