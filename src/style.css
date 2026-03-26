@@ -72,9 +72,8 @@ a {
 /* END CSS RESET */
 
 :root {
-  --font-color: white;
-
-  --primary-light: rgb(61, 61, 61);
+  --white: white;
+  --black: rgb(20, 20, 20);
   --primary: rgb(150, 160, 217);
   --primary-dark: rgb(82, 106, 242);
   --primary-darker: rgb(61, 70, 242);
@@ -91,15 +90,15 @@ a {
 }
 
 ::selection {
-  background-color: var(--primary);
+  background-color: var(--primary-darker);
 }
 
 * {
-  background-color: var(--primary-darker);
-  color: var(--font-color);
+  color: var(--white);
 }
 
 body {
+    background-color: var(--primary-darkest);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -117,7 +116,7 @@ footer {
   margin-top: auto;
   height: 50px;
   width: 100%;
-  background-color: var(--primary-darkest);
+  background-color: var(--white);
 
   display: flex;
   justify-content: center;
@@ -127,6 +126,10 @@ footer {
 
 footer > * {
   background-color: transparent;
+}
+
+footer p {
+      color: var(--black);
 }
 
 .github-logo {
