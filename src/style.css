@@ -73,7 +73,9 @@ a {
 
 :root {
   --white: white;
+  --grey: rgb(102, 112, 123);
   --black: rgb(20, 20, 20);
+
   --primary: rgb(150, 160, 217);
   --primary-dark: rgb(82, 106, 242);
   --primary-darker: rgb(61, 70, 242);
@@ -109,6 +111,41 @@ h1 {
     padding: 10px;
 }
 
+.search-bar-container {
+    display: flex;
+    position: relative
+}
+
+.icon {
+  border: none;
+  height: 30px;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 2px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.icon img {
+    background-color: transparent;
+}
+
+.search-bar-container div {
+  display: flex;
+  align-items: center;
+}
+
+#searchBar {
+  padding: 4px 10px;
+  padding-left: 30px;;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: bold;
+  width: min(250px, 40vw);
+}
+
+
 /* Utilitary classes */
 .hidden {
   display: none !important;
@@ -133,7 +170,8 @@ footer > * {
 }
 
 footer p {
-      color: var(--black);
+      color: var(--grey);
+      font-weight: bold;
 }
 
 .github-logo {
