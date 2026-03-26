@@ -6,12 +6,19 @@ export async function getWeather(city) {
   );
   const data = await response.json();
 
-  const { conditions, precip, sunrise, sunset, temp, uvindex, wind } =
+  const address = data.address;
+  const { conditions, icon, precip, sunrise, sunset, temp, uvindex, wind } =
     data.currentConditions;
   console.log(data);
 
+  if (!data.currentConditions) {
+    throw new Error("Invalid city name");
+  }
+
   return {
+    address,
     conditions,
+    icon,
     precip,
     sunrise,
     sunset,
