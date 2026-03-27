@@ -1,7 +1,11 @@
 import searchIcon from "./icons/search.svg?inline";
 import githubIcon from "./icons/github-mark-grey.svg?inline";
 import { icons } from "./weather-icons";
-import { capitalize, formatTime } from "./utils";
+import {
+  capitalize,
+  formatTimeWithTimezone,
+  getLocalTimeInCity,
+} from "./utils";
 import { handleSearch } from "./controller";
 
 const searchBar = document.getElementById("searchBar");
@@ -16,6 +20,7 @@ const precipEl = document.querySelector(".precip");
 const windEl = document.querySelector(".wind");
 const uvEl = document.querySelector(".uv");
 const sunriseEl = document.querySelector(".sunrise");
+const currentTimeEl = document.querySelector(".current-time");
 const sunsetEl = document.querySelector(".sunset");
 
 export async function displayWeather(data) {
@@ -26,8 +31,25 @@ export async function displayWeather(data) {
   precipEl.textContent = `${data.precip} mm`;
   windEl.textContent = `${data.windspeed} km/h`;
   uvEl.textContent = data.uvindex;
-  sunriseEl.textContent = formatTime(data.sunrise);
-  sunsetEl.textContent = formatTime(data.sunset);
+
+  const sunriseDate = new Date(data.sunriseEpoch * 1000);
+  const currentDate = new Date().toLocaleTimeString("fr-FR", {
+    timeZone: data.timezone,
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const sunsetDate = new Date(data.sunsetEpoch * 1000);
+
+  sunriseEl.textContent = formatTimeWithTimezone(
+    data.sunriseEpoch,
+    data.timezone,
+  );
+
+  currentTimeEl.textContent = currentDate;
+  sunsetEl.textContent = formatTimeWithTimezone(
+    data.sunsetEpoch,
+    data.timezone,
+  );
 }
 
 export function displayError(message) {

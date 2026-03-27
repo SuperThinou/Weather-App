@@ -149,6 +149,7 @@ h1 {
 main {
   margin-top: 5vh;
   padding: 10px;
+  min-width: 300px;
   background-color: var(--primary-dark);
   border-radius: 10px;
   text-align: center;
@@ -169,7 +170,7 @@ main {
   gap: 10px;
 }
 
-.sunrise-sunset-container {
+.time-container {
   grid-column: 1 / -1; 
   display: flex;
   justify-content: space-around;
@@ -207,8 +208,12 @@ main h4 {
   margin: 0 15px;
 }
 
-.precip, .wind, .uv, .sunrise, .sunset {
+.precip, .wind, .uv, .sunrise,  .sunset {
   padding-bottom: 20px;
+}
+
+.current-time {
+  font-size: 1.2rem;
 }
 
 /* Utilitary classes */

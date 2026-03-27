@@ -5,7 +5,7 @@ import { getWeather } from "./api";
 import { displayWeather } from "./dom";
 
 async function init() {
-  const weatherData = await getWeather("Budapest");
+  const weatherData = await getWeather("Tokyo");
   displayWeather(weatherData);
 }
 

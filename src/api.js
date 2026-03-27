@@ -10,14 +10,17 @@ export async function getWeather(city) {
   }
 
   const data = await response.json();
+  console.log(data);
 
   const address = data.address;
+  const timezone = data.timezone;
   const {
     conditions,
+    datetimeEpoch,
     icon,
     precip,
-    sunrise,
-    sunset,
+    sunriseEpoch,
+    sunsetEpoch,
     temp,
     uvindex,
     windspeed,
@@ -26,11 +29,13 @@ export async function getWeather(city) {
   return {
     address,
     conditions,
+    datetimeEpoch,
     icon,
     precip,
-    sunrise,
-    sunset,
+    sunriseEpoch,
+    sunsetEpoch,
     temp,
+    timezone,
     uvindex,
     windspeed,
   };
