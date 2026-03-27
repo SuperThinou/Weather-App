@@ -87,7 +87,7 @@ a {
   --green: limegreen;
   --green-dark: rgba(50, 205, 50, 0.25);
 
-  --red: red;
+  --red: rgb(133, 75, 75);
   --red-dark: rgba(250, 0, 0, 0.12);
 }
 
@@ -214,6 +214,10 @@ main h4 {
 /* Utilitary classes */
 .hidden {
   display: none !important;
+}
+
+.error {
+  color: var(--red);
 }
 
 /* FOOTER */

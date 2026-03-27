@@ -2,7 +2,7 @@ import searchIcon from "./icons/search.svg?inline";
 import githubIcon from "./icons/github-mark-grey.svg?inline";
 import { icons } from "./weather-icons";
 import { capitalize, formatTime } from "./utils";
-import { getWeather } from "./api";
+import { handleSearch } from "./controller";
 
 const searchBar = document.getElementById("searchBar");
 const searchBtn = document.getElementById("searchBtn");
@@ -30,27 +30,22 @@ export async function displayWeather(data) {
   sunsetEl.textContent = formatTime(data.sunset);
 }
 
+export function displayError(message) {
+  const errorEl = document.querySelector(".error");
+
+  errorEl.textContent = message;
+  errorEl.classList.remove("hidden");
+}
+
 // Event listeners
-searchBtn.addEventListener("click", async () => {
-  if (searchBar.value.trim() === "") return;
+searchBtn.addEventListener("click", () => handleSearch(searchBar));
 
-  const city = searchBar.value;
-  searchBar.value = "";
-
-  const weatherData = await getWeather(city);
-  displayWeather(weatherData);
+searchBar.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") handleSearch(searchBar);
 });
 
-searchBar.addEventListener("keydown", async (e) => {
-  if (e.key === "Enter") {
-    if (searchBar.value.trim() === "") return;
-
-    const city = searchBar.value;
-    searchBar.value = "";
-
-    const weatherData = await getWeather(city);
-    displayWeather(weatherData);
-  }
+searchBar.addEventListener("input", () => {
+  displayError("");
 });
 
 // Search Bar icon
