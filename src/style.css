@@ -153,6 +153,8 @@ main {
   background-color: var(--primary-dark);
   border-radius: 10px;
   text-align: center;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(30, 110, 184, 0.315);
+  box-shadow: 5px 5px 10px 0px rgba(30, 110, 184, 0.315);
 
   display: grid;
   gap: 10px;
