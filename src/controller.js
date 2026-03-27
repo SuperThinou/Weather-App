@@ -11,6 +11,10 @@ export async function handleSearch(searchBar) {
     const weatherData = await getWeather(city);
     displayWeather(weatherData);
   } catch (error) {
-    displayError(error.message);
+    if (error.message === "CITY_NOT_FOUND") {
+      displayError("Invalid city name");
+    } else {
+      displayError("Network error");
+    }
   }
 }

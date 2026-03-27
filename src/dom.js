@@ -8,8 +8,10 @@ import {
 } from "./utils";
 import { handleSearch } from "./controller";
 
+const weatherCard = document.querySelector("main");
 const searchBar = document.getElementById("searchBar");
 const searchBtn = document.getElementById("searchBtn");
+const loader = document.getElementById("loader");
 
 const cityEl = document.querySelector(".city");
 const weatherIcon = document.querySelector(".weather-icon");
@@ -57,6 +59,15 @@ export function displayError(message) {
 
   errorEl.textContent = message;
   errorEl.classList.remove("hidden");
+}
+
+export function addLoadingStyle() {
+  loader.classList.remove("hidden");
+  weatherCard.style.opacity = 0.3;
+}
+export function removeLoadingStyle() {
+  loader.classList.add("hidden");
+  weatherCard.style.opacity = 1;
 }
 
 // Event listeners
