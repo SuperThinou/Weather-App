@@ -24,7 +24,15 @@ export default {
       },
       {
         test: /\.svg$/,
-        type: "asset/source",
+        oneOf: [
+          {
+            resourceQuery: /inline/,
+            type: "asset/source",
+          },
+          {
+            type: "asset/resource",
+          },
+        ],
       },
       {
         test: /\.html$/i,

@@ -1,8 +1,11 @@
-import searchIcon from "./icons/search.svg";
-import githubIcon from "./icons/github-mark-grey.svg";
+import searchIcon from "./icons/search.svg?inline";
+import githubIcon from "./icons/github-mark-grey.svg?inline";
+import { icons } from "./weather-icons";
+
+console.log(githubIcon);
 
 const cityEl = document.querySelector(".city");
-const weatherIcon = document.querySelector(".weather.icon");
+const weatherIcon = document.querySelector(".weather-icon");
 
 const conditionsEl = document.querySelector(".conditions");
 const tempEl = document.querySelector(".temp");
@@ -14,6 +17,7 @@ const sunsetEl = document.querySelector(".sunset");
 
 export async function displayWeather(data) {
   cityEl.textContent = data.address;
+  weatherIcon.src = icons[data.icon];
   conditionsEl.textContent = data.conditions;
   tempEl.textContent = data.temp + "°C";
   precipEl.textContent = `Precipitations : ${data.precip} mm`;
