@@ -1,6 +1,7 @@
 import searchIcon from "./icons/search.svg?inline";
 import githubIcon from "./icons/github-mark-grey.svg?inline";
 import { icons } from "./weather-icons";
+import { formatTime } from "./utils";
 
 console.log(githubIcon);
 
@@ -20,11 +21,11 @@ export async function displayWeather(data) {
   weatherIcon.src = icons[data.icon];
   conditionsEl.textContent = data.conditions;
   tempEl.textContent = data.temp + "°C";
-  precipEl.textContent = `Precipitations : ${data.precip} mm`;
-  windEl.textContent = `Wind : ${data.windspeed} km/h`;
-  uvEl.textContent = `UV Index : ${data.uvindex}`;
-  sunriseEl.textContent = `Sunrise : ${data.sunrise}`;
-  sunsetEl.textContent = `Sunset : ${data.sunset}`;
+  precipEl.textContent = `Precipitations: ${data.precip} mm`;
+  windEl.textContent = `Wind: ${data.windspeed} km/h`;
+  uvEl.textContent = `UV Index: ${data.uvindex}`;
+  sunriseEl.textContent = `Sunrise: ${formatTime(data.sunrise)}`;
+  sunsetEl.textContent = `Sunset: ${formatTime(data.sunset)}`;
 }
 
 // Search Bar icon

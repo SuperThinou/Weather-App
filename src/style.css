@@ -194,14 +194,9 @@ main {
     text-align: center;
 }
 
-.precip {
-  padding-bottom: 10px;
-}
-.wind {
-  padding-bottom: 10px;
-}
-.sunrise {
-  padding-bottom: 10px;
+.precip, .wind, .uv, .sunrise, .sunset {
+  padding-bottom: 20px;
+  font-weight: bold;
 }
 
 /* Utilitary classes */
