@@ -87,7 +87,7 @@ a {
   --green: limegreen;
   --green-dark: rgba(50, 205, 50, 0.25);
 
-  --red: rgb(133, 75, 75);
+  --red: rgb(156, 47, 47);
   --red-dark: rgba(250, 0, 0, 0.12);
 }
 
@@ -217,7 +217,9 @@ main h4 {
 }
 
 .error {
+  padding-top: 4px;
   color: var(--red);
+  font-weight: bold;
 }
 
 /* FOOTER */
