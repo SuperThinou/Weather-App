@@ -1,3 +1,5 @@
+import favicon from "./assets/favicon.ico";
+
 import "./style.css";
 import "./dom";
 import "./api";
@@ -10,3 +12,10 @@ async function init() {
 }
 
 init();
+
+// Favicon
+const link = document.createElement("link");
+link.rel = "icon";
+link.type = "image/x-icon";
+link.href = favicon;
+document.head.appendChild(link);

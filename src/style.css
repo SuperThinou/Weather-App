@@ -92,7 +92,7 @@ a {
 }
 
 ::selection {
-  background-color: var(--primary-darker);
+  background-color: var(--primary);
 }
 
 * {

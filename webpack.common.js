@@ -23,7 +23,7 @@ export default {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|ico)$/,
         oneOf: [
           {
             resourceQuery: /inline/,
