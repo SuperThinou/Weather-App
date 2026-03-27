@@ -147,27 +147,37 @@ h1 {
 }
 
 main {
-    margin-top: 5vh;
-    padding: 10px;
-    background-color: var(--primary-dark);
-    border-radius: 10px;
-    text-align: center;
+  margin-top: 5vh;
+  padding: 10px;
+  background-color: var(--primary-dark);
+  border-radius: 10px;
+  text-align: center;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+  display: grid;
+  gap: 10px;
 }
 
-.city { grid-area: 1 / 1 / 2 / 2; }
-.weather-icon-container { grid-area: 1 / 2 / 2 / 3; }
-.conditions { grid-area: 2 / 1 / 3 / 3; }
-.temp { grid-area: 3 / 1 / 4 / 3; }
-.precip { grid-area: 4 / 1 / 5 / 3; }
-.wind { grid-area: 5 / 1 / 6 / 2; }
-.uv { grid-area: 5 / 2 / 6 / 3; }
-.sunrise { grid-area: 6 / 1 / 7 / 2; }
-.sunset { grid-area: 6 / 2 / 7 / 3; }
+.city-icon-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-info-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sunrise-sunset-container {
+  grid-column: 1 / -1; 
+  display: flex;
+  justify-content: space-around;
+}
+
+main h4 {
+  font-size: 1.2rem;
+}
 
 .city {
     font-size: 2.5rem;
@@ -175,7 +185,7 @@ main {
 
 .weather-icon-container {
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
 
 .weather-icon {
@@ -184,7 +194,6 @@ main {
 }
 
 .conditions {
-  padding-left: 10px;
   font-style: italic;
   font-weight: bold;
 }
@@ -194,9 +203,12 @@ main {
     text-align: center;
 }
 
+.precip, .wind, .uv {
+  margin: 0 15px;
+}
+
 .precip, .wind, .uv, .sunrise, .sunset {
   padding-bottom: 20px;
-  font-weight: bold;
 }
 
 /* Utilitary classes */

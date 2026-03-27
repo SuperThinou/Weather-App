@@ -21,11 +21,11 @@ export async function displayWeather(data) {
   weatherIcon.src = icons[data.icon];
   conditionsEl.textContent = data.conditions;
   tempEl.textContent = data.temp + "°C";
-  precipEl.textContent = `Precipitations: ${data.precip} mm`;
-  windEl.textContent = `Wind: ${data.windspeed} km/h`;
-  uvEl.textContent = `UV Index: ${data.uvindex}`;
-  sunriseEl.textContent = `Sunrise: ${formatTime(data.sunrise)}`;
-  sunsetEl.textContent = `Sunset: ${formatTime(data.sunset)}`;
+  precipEl.textContent = `${data.precip} mm`;
+  windEl.textContent = `${data.windspeed} km/h`;
+  uvEl.textContent = data.uvindex;
+  sunriseEl.textContent = formatTime(data.sunrise);
+  sunsetEl.textContent =formatTime(data.sunset);
 }
 
 // Search Bar icon

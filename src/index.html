@@ -15,16 +15,38 @@
     </div>
 
     <main>
-        <h2 class="city"></h2>
-        <div class="weather-icon-container"><img src="#" class="weather-icon" alt=""></div>
+        <div class="city-icon-container">
+            <h2 class="city"></h2>
+            <div class="weather-icon-container"><img src="#" class="weather-icon" alt=""></div>
+        </div>
         <p class="conditions"></p>
         <h3 class="temp"></h3>
 
-        <p class="precip"></p>
-        <p class="wind"></p>
-        <p class="uv"></p>
-        <p class="sunrise"></p>
-        <p class="sunset"></p>
+        <div class="weather-info-container">
+            <div class="precip-container">
+                <h4 class="precip-title">Rain</h4>
+                <p class="precip"></p>
+            </div>
+            <div class="wind-container">
+                <h4 class="wind-title">Wind</h4>
+                <p class="wind"></p>
+            </div>
+            <div class="uv-container">
+                <h4 class="uv-title">UV Index</h4>
+                <p class="uv"></p>
+            </div>
+
+            <div class="sunrise-sunset-container">
+                <div class="sunrise-container">
+                    <h4 class="sunrise-title">Sunrise</h4>
+                    <p class="sunrise"></p>
+                </div>
+                <div class="sunset-container">
+                    <h4 class="sunset-title">Sunset</h4>
+                    <p class="sunset"></p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
